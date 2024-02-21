@@ -1,0 +1,18 @@
+<turbo-frame id="comment_<%= comment.id %>">
+  <div class="d-flex  border justify-content-between m-1 p-1">
+    <div class='d-flex '>
+      <div class="mx-2 ">
+        <strong>Commenter:</strong>
+        <%= comment.commenter %>
+      </div>
+      <div class="mx-2  ">
+        <strong>Comment:</strong>
+        <%= comment.body %>
+      </div>
+    </div>
+    <div class="mx-2 d-flex">
+      <%= link_to 'Edit', edit_article_comment_path(comment.article, comment),data:{turbo_frame: "comments_form"}, method: :patch , class: 'text-secondary'%>
+      <%= button_to 'Delete', article_comment_path(comment.article, comment), method: :delete, class: 'link-style-button mx-1' %>
+    </div>
+  </div>
+</turbo-frame>

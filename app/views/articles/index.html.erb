@@ -1,0 +1,33 @@
+<%= turbo_frame_tag "index_page" do %>
+  <div class="text-secondary container-fluid bg-light px-5 py-3 d-flex justify-content-between align-items-center">
+    <h2 class="">Articles</h2> 
+    <%= link_to "New Article", new_article_path ,data: { turbo_frame: "index_page"}, class:"btn btn-sm btn-secondary" %>
+  </div>
+   
+  <% if @articles.present?%>
+  <div class="mx-3 my-1 p-3">
+    <div class="row px-1">
+      <div class="col-3">
+        <h6>Id</h6>
+      </div>
+      <div class="col-3">
+        <h6>Name</h6>
+      </div>
+      <div class="col-3">
+        <h6>Article Type</h6>
+      </div>
+      <div class="col-3">
+        <h6>Controls</h6>
+      </div>
+    </div>
+
+    <div id="articles">
+      <%= render @articles%>
+    </div>
+  <% else %>
+    <div class=" mt-5 text-center text-secondary ">
+    <h5 style=" border-style:dotted; display:inline;" class="p-3">There is no articles yet.  <%= link_to "New Article", new_article_path ,data: { turbo_frame: "index_page"}, class:"text-primary" %></h5>
+    </div>
+  <%end%>
+  </div>
+<% end %>

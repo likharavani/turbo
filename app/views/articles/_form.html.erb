@@ -1,0 +1,25 @@
+<div id="article_form">
+<div class="border  shadow p-3 my-2 bg-light">
+  <%= form_with(model: article) do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name,class:"form-control mb-2" %>
+    <% article.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :article_type %><br>
+    <%= form.text_field :article_type,class:"form-control mb-2" %><br>
+    <% article.errors.full_messages_for(:article_type).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+  <% end %>
+</div>
+</div>

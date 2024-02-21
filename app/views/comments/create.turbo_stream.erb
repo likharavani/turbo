@@ -1,0 +1,8 @@
+<!--create.turbo_stream-->
+  <%= turbo_stream.prepend "comments" do %>
+    <%= render "comment", comment: @comment %>
+  <% end %>
+
+  <%= turbo_stream.replace "comments_form" do %>
+    <%= render "form", comment: Comment.new %>
+  <% end %>

@@ -1,0 +1,6 @@
+<!-- app/views/comments/form.html.erb -->
+<%= turbo_frame_tag "comments_form" do %>
+  <%= form_with(model: [ @article, @article.comments.build ] ) do |form| %>
+    <%= render 'comments/comment_form_fields', form: form %>
+  <% end %>
+<% end %>

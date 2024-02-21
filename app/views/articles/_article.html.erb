@@ -1,0 +1,11 @@
+
+<div class=" border border-gray-300 row py-2">
+  <div class="col-3"><%= article.id %></div>
+  <div class="col-3 text-capitalize"><%= article.name %></div>
+  <div class="col-3"><%= article.article_type %></div>
+  <div class="col-3 d-flex">
+    <%= link_to "View", article, data: { turbo_frame: "index_page" }, class: "text-secondary mx-1"%>
+    <%= link_to "Edit",  edit_article_path(article),data: { turbo_frame: "index_page" },class: "text-secondary mx-1"%>
+    <%= button_to 'Delete', article_path(article), method: :delete,data: { turbo_frame: "index_page" }, class: 'link-style-button mx-1' %>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<%= turbo_frame_tag "index_page" do %>
+  <div class="text-secondary container-fluid bg-light px-5 py-3 d-flex justify-content-between align-items-center">
+    <div>
+      <%= link_to "Back to Articles", "/articles" , class:"text-secondary text-decoration-none" %>
+      <h2 class="text-capitalize"><%= @article.name %></h2>
+    </div>
+    <div class="d-flex justify-content-between">
+      <%= link_to "Edit Article", edit_article_path(@article) , class:"btn btn-secondary mx-2 btn-sm"%>
+      <%= button_to 'Delete Article', article_path(@article), method: :delete, class: 'btn btn-secondary mx-2 btn-sm' %>
+    </div>
+
+  </div>
+    <div class="p-2">
+    <p class="mx-5" >Article Type: <%= @article.article_type %></p>
+  </div>
+
+
+  <div class="mx-5">
+    <h4>Comments</h4> 
+    <div id="comments">
+      <%= render partial: 'comments/comment', collection: @article.comments, as: :comment %>
+    </div>
+    <%= turbo_frame_tag "comments_form" do %>
+      <h4>Add a comment:</h4>
+      <%= render 'comments/form', comment: Comment.new, article: @article %>
+    <%end%>
+  </div>
+
+<% end %>

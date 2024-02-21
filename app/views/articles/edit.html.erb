@@ -1,0 +1,11 @@
+<%= turbo_frame_tag "index_page" do %>
+  <div class="text-secondary container-fluid bg-light px-5 py-3 d-flex justify-content-between align-items-center">
+    <div>
+      <%= link_to "Back to Articles", "/articles" , class:"text-secondary text-decoration-none" %>
+      <h2 class="text-capitalize"><%= @article.name %></h2>
+    </div>   
+  </div>
+  <div class="mx-3">
+    <%= render "form", article: @article %>
+  </div>
+<% end %>
