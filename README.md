@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hotwire is not a single framework; it’s a suite of different frameworks.
 
-Things you may want to cover:
+1. Turbo uses different techniques to reduce the amount of JavaScript most web applications have to write. This is the most important part of Hotwire.
 
-* Ruby version
+2. Stimulus is a JavaScript framework when you absolutely need to use JavaScript. It sprinkles the client-side interactivity for your application when a server-side trip is not justified.
 
-* System dependencies
+When creating a new article or comments only update section is changed and rest of remains unchanged this is because of we use turbo-frame and turbo-stream in the whole application. 
 
-* Configuration
+And for stimulus 
 
-* Database creation
+1. When user click on particular article name the alert box is open in which we use stimulus js, for this we add controller user_click inside the javascript.
 
-* Database initialization
+2. When user check the check-box then its state is updated using the stimulus js, for this we add controller user_toggle inside the javascript.
 
-* How to run the test suite
+Response
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can see the response like only frames are updated not the whole page renders using terminal or in network tab 
